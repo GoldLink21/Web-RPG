@@ -1,0 +1,65 @@
+#board{
+    margin-top:20px;
+    text-align:center;
+    border:black solid 2px;
+    display:inline-flex;
+}
+#info{ 
+    padding:12px;
+    font-size:18px;
+    margin:auto;
+    text-align:center;
+    transition:all 0.5s;
+    width:250px
+}
+#help{
+    border:black 2px dotted;
+    padding:10px;
+    float:center;
+    width:250px;
+    height:auto;
+    background:skyblue;
+    transition: all 0.5s;
+    margin:auto;
+    margin-top:10px;
+    text-align: center;
+}
+#debug{
+    border: red 2px dashed;
+    width:255px
+}
+#canvas{
+    height:auto;
+    margin-top:auto;
+    margin-right:auto;
+    margin-bottom:auto;
+    border:2px solid black;
+}
+#tell{
+    position: absolute;
+    background-color:lightblue;
+    border:solid blue 2px;
+    top:20%;
+    display:none;
+    margin:5%;
+    left:50%;
+    margin-top:0px;
+    text-align: center;
+    width: 90%;
+    left:0%;
+    max-height: 60%;
+    overflow-wrap: break-word;
+}
+#tellSpan{
+    border-radius: 20%;
+    margin-top: -7%;
+    background-color:#3fa8ca;
+    text-align:left;
+    border:2px solid blue;
+    width:auto;
+    float:left
+}
+#holder{
+    position: relative;
+    text-align: center;
+}

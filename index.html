@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="Programmer" content="Chris Holtsclaw">
+    <meta name="Artist" content="Sarah Gann">
+    <meta name="Artist" content="Noble Jones">
+    <title>Rpg</title>
+    <link rel='stylesheet' href='main.css'>
+    <link rel='icon' href='gfx/portalB.png' sizes="32x32" type="image/png">
+    <script src='externalConsole.js'></script>
+    <script src='classes.js'></script>
+    <script src='area.js'></script>
+</head>
+<body>
+    <script src='main.js'></script>
+    <script src='tell.js'></script>
+    <script src='makeMaps.js'></script>
+    <script src='extra.js'></script>
+    <script>
+        debug.showCoords=false
+        function tellToPlay(){
+            tell('Use arrows or wasd to move. Use space to interact with things')
+        }
+        
+        var com=new Composite(new Sign(5,4,'a'))
+        a.addEnt(com)
+
+        /*
+        check('Have you played before?',undefined,undefined,()=>{
+            check('Do you want to know how to play anyways?',undefined,undefined,tellToPlay,()=>{
+                tell('Have a key then')
+                player.addItem(new Item('Golden Key'))
+            })
+        },tellToPlay)
+        */
+
+        var count=0
+        function spin(dx=1,delay=10){
+	        setTimeout(()=>{
+                HTML.canvas.style.transform= 'rotateY('+count+'deg) rotateZ('+count+"deg)"
+		        count+=dx
+		        if(count<=360)
+		    	    spin(dx,delay)
+		        else
+		    	    count=0
+	        },delay)
+        }
+
+        var i=new Inventory(new Item('AA'),new Item('BB'),new Item("CC"))
+
+        function l(...params){
+            console.log(...params)
+        }
+
+        function testFuncs(functionOne,functionTwo){
+            var iterations = 10000000;
+            console.time('Function #1');
+            for(var i = 0; i < iterations; i++ ){
+                functionOne();
+            };
+            console.timeEnd('Function #1')
+
+            console.time('Function #2');
+            for(var i = 0; i < iterations; i++ ){
+                functionTwo();
+            };
+            console.timeEnd('Function #2')
+        }
+
+        function test(functionOne,functionTwo){
+            var iterations = 10000000;
+            console.time('Test #1');
+            for(var i = 0; i < iterations; i++ ){
+                functionOne;
+            };
+            console.timeEnd('Test #1')
+
+            console.time('Test #2');
+            for(var i = 0; i < iterations; i++ ){
+                functionTwo;
+            };
+            console.timeEnd('Test #2')
+        }
+
+        //b(1,1).color=new Col().R(0,255).G(0,255).B(0,255)
+        //var c=b(1,1).color
+    </script>
+</body>
+</html>
